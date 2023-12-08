@@ -1,0 +1,12 @@
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  download_llamafile:
+    cmds:
+      - wget https://huggingface.co/jartine/mistral-7b.llamafile/resolve/main/mistral-7b-instruct-v0.1-Q4_K_M-server.llamafile?download=true -O mistral-7b-server.llamafile
+      - chmod +x ./mistral-7b-server.llamafile
